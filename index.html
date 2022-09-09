@@ -1,0 +1,123 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-brand">
+        <img src="./assets/image/logo.svg" alt="logo" />
+      </div>
+
+      <div class="header-section1">
+        <button class="header-login-btn btn btn-primary">
+          <span> ورود/عضویت </span>
+          <i class="fas fa-arrow-left-long"></i>
+        </button>
+        <navbar class="navbar">
+          <label for="navbar-ham-checkbox" class="ham-btn-container">
+            <i class="fa-solid fa-bars"></i>
+          </label>
+          <input
+            type="checkbox"
+            id="navbar-ham-checkbox"
+            class="togglemenue-checkbox"
+          />
+          <div class="navbar-container">
+            <ul class="navbar-list">
+              <li class="nav-link active"><a href=""> خانه </a></li>
+              <li class="nav-link has-child">
+                <a href="#">
+                  <label for="dd-1"> dropdown </label>
+                </a>
+
+                <input type="checkbox" id="dd-1" class="togglemenue-checkbox" />
+                <div class="navbar-wrapper">
+                  <ul class="navbar-list">
+                    <li class="nav-link"><a href=""> ساب ۱ </a></li>
+                    <li class="nav-link"><a href="">ساب ۲</a></li>
+                    <li class="nav-link"><a href="">ساب ۳</a></li>
+                    <li class="nav-link has-child">
+                      <a href="#">
+                        <label for="ddd-1"> ساب در ساب </label>
+                      </a>
+
+                      <input
+                        type="checkbox"
+                        id="ddd-1"
+                        class="togglemenue-checkbox"
+                      />
+                      <div class="navbar-wrapper">
+                        <ul class="navbar-list">
+                          <li class="nav-link">
+                            <a href=""> ساب در ساب ۱ </a>
+                          </li>
+                          <li class="nav-link has-child">
+                            <a href="#">
+                              <label for="dddd-1"> ساب در ساب در ساب </label>
+                            </a>
+
+                            <input
+                              type="checkbox"
+                              id="dddd-1"
+                              class="togglemenue-checkbox"
+                            />
+                            <div class="navbar-wrapper">
+                              <ul class="navbar-list">
+                                <li class="nav-link">
+                                  <a href=""> ۱ ساب در ساب در ساب </a>
+                                </li>
+                                <li class="nav-link">
+                                  <a href=""> ۲ساب در ساب در ساب </a>
+                                </li>
+                                <li class="nav-link">
+                                  <a href=""> ۳ساب در ساب در ساب </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="nav-link"><a href="">ساب در ساب ۳</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-link has-child">
+                <a href="#">
+                  <label for="dd-2"> dropdown2 </label>
+                </a>
+
+                <input type="checkbox" id="dd-2" class="togglemenue-checkbox" />
+                <div class="navbar-wrapper">
+                  <ul class="navbar-list">
+                    <li class="nav-link"><a href=""> ساب ۱ </a></li>
+                    <li class="nav-link"><a href="">ساب ۲</a></li>
+                    <li class="nav-link"><a href="">ساب ۳</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="nav-link"><a href=""> همکاری با ما</a></li>
+              <li class="nav-link"><a href=""> درباره ما </a></li>
+              <li class="nav-link"><a href="">تماس با ما</a></li>
+            </ul>
+          </div>
+        </navbar>
+      </div>
+    </header>
+    <main>main</main>
+    <footer>footer</footer>
+  </body>
+</html>

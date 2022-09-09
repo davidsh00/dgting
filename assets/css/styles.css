@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700;900&display=swap");
+
+/***********************************
+            reset
+***********************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Vazirmatn";
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul,
+li {
+  list-style: none;
+}
+
+/***********************************
+            global style
+***********************************/
+.btn {
+  font-weight: 700;
+  padding: 0.5rem;
+  background-color: white;
+  outline: none;
+  border-radius: 0.2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+}
+.btn-primary {
+  color: red;
+  background-color: white;
+}
+.btn-primary:hover,
+.btn-primary:active {
+  box-shadow: 2px 2px 5px 1px rgba(255, 0, 0, 0.3);
+  color: white;
+  background-color: red;
+}
+/***********************************
+            layout
+***********************************/
+footer,
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+header,
+footer {
+  background-color: #eee;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  height: 100%;
+}
+
+/***********************************
+            header
+***********************************/
+header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+.header-brand {
+  width: 80px;
+}
+.header-login-btn {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header-section1 {
+  width: 100%;
+  flex-direction: row-reverse;
+  display: flex;
+  padding: 0 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar {
+  direction: rtl;
+}
+.ham-btn-container {
+  color: red;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.togglemenue-checkbox {
+  display: none;
+}
+.navbar .navbar-container {
+  position: absolute;
+  transition: all 0.4s ease-in-out, background-color 0s;
+  max-height: 0;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.05);
+}
+.navbar #navbar-ham-checkbox:checked + .navbar-container {
+  max-height: 100vh;
+}
+.navbar-list .has-child .togglemenue-checkbox:checked + div {
+  max-height: 100vh;
+}
+.has-child:has(.togglemenue-checkbox:checked) > a label {
+  color: red;
+}
+.has-child:has(.togglemenue-checkbox:checked) > a label::after {
+  transform: rotate(180deg);
+}
+.navbar-container > .navbar-list {
+  width: 100%;
+  padding: 0.5rem;
+  max-height: 90vh;
+  overflow: auto;
+}
+.navbar-container > .navbar-list {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s;
+}
+.navbar-list > .nav-link:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.nav-link.has-child {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.nav-link a {
+  transition: all 0.4s;
+  display: inline-block;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+.has-child a label {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.25rem;
+}
+.has-child a label::after {
+  transition: transform 0.4s ease-in-out;
+  font-family: FontAwesome;
+  content: "\f107";
+}
+
+.nav-link a:hover {
+  color: red;
+}
+.nav-link.active {
+  color: red;
+}
+.navbar-container > .navbar-list .navbar-wrapper {
+  transition: all 0.4s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  width: 100%;
+}
+.navbar-container > .navbar-list .navbar-wrapper .navbar-list {
+  padding: 0 1rem;
+}
+
+/***********************************
+            media query
+***********************************/
+@media screen and (min-width: 768px) {
+  .header-login-btn {
+    order: 2;
+  }
+  .navbar {
+    width: 100%;
+  }
+  .ham-btn-container {
+    display: none;
+  }
+  .navbar .navbar-container {
+    overflow: initial;
+    position: relative;
+    height: auto;
+    max-height: initial;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .navbar-container > .navbar-list {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .navbar-container > .navbar-list .navbar-wrapper {
+    position: absolute;
+    width: max-content;
+    background-color: white;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+    top: 100%;
+    max-height: 100vh;
+    opacity: 0;
+    overflow: visible;
+  }
+  .has-child:has(.togglemenue-checkbox:checked) > a label::after {
+    transform: rotate(0deg);
+  }
+  .navbar-list .has-child .togglemenue-checkbox:checked + div {
+    opacity: 1;
+  }
+  .navbar-container > .navbar-list .navbar-wrapper .navbar-list {
+    padding: 0;
+    overflow: visible;
+  }
+  .navbar-container > .navbar-list .navbar-wrapper .navbar-list .nav-link {
+    padding: 0 0.5rem;
+  }
+  .has-child .has-child a label::after {
+    font-family: FontAwesome;
+    content: "\f104";
+  }
+  .has-child .has-child .navbar-wrapper {
+    right: 100%;
+    top: 50%;
+  }
+  .navbar-container > .navbar-list {
+    max-height: initial;
+    overflow: inherit;
+  }
+}
